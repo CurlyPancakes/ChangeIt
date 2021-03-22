@@ -5,3 +5,5 @@
 .idea/vcs.xml
 .idea/workspace.xml
 ChangeIt.iml
+out/production/ChangeIt/com/namespace/function/Actions.class
+out/production/ChangeIt/com/namespace/Main.class
