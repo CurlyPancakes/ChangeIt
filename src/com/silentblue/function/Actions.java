@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.attribute.FileTime;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
 import static java.util.Map.entry;
@@ -23,6 +26,18 @@ public class Actions {
             entry("isOther", boolean.class),
             entry("filekey", Object.class)
     ));
+
+    public static long getUnixFromDate(String date){
+        try {
+            SimpleDateFormat sdf = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+            Date dt = sdf.parse(date);
+            long epoch = dt.getTime();
+            return epoch;
+        } catch (ParseException e) {
+            System.err.println(date + " -> Wrong syntax! | Syntax: dd-mm-yyyy hh:mm:ss -> 12-01-2018 16:22:59");
+            return -1;
+        }
+    }
 
     public static boolean changeAttribute(File file, String attribute, Object value){
         if(list_of_types.containsKey(attribute)) {
