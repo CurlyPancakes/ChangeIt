@@ -1,6 +1,6 @@
-package com.namespace;
+package com.silentblue;
 
-import com.namespace.function.Actions;
+import com.silentblue.function.Actions;
 
 import java.io.File;
 import java.nio.file.attribute.FileTime;

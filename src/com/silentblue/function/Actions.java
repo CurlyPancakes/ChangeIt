@@ -1,4 +1,4 @@
-package com.namespace.function;
+package com.silentblue.function;
 
 import java.io.File;
 import java.io.IOException;
